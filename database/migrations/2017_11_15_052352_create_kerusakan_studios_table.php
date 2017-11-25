@@ -15,6 +15,12 @@ class CreateKerusakanStudiosTable extends Migration
     {
         Schema::create('kerusakan_studios', function (Blueprint $table) {
             $table->increments('id');
+            $table->text('keterangan');
+            $table->integer('user_id')->unsigned();
+            $table->foreign('user_id')->references('id')->on('users');
+            $table->integer('pengurus_id')->unsigned();
+            $table->foreign('pengurus_id')->references('id')->on('penguruses');
+            $table->integer('harga');
             $table->timestamps();
         });
     }

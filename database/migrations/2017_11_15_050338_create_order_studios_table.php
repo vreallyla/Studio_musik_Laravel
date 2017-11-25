@@ -14,11 +14,11 @@ class CreateOrderStudiosTable extends Migration
     public function up()
     {
         Schema::create('order_studios', function (Blueprint $table) {
-            $table->increments('id_order_detail');
+            $table->increments('id');
             $table->integer('order_id')->unsigned();
-            $table->foreign('order_id')->references('id_order')->on('orders');
+            $table->foreign('order_id')->references('id')->on('orders');
             $table->integer('studio_id')->unsigned();
-            $table->foreign('studio_id')->references('id_studio')->on('studios');
+            $table->foreign('studio_id')->references('id')->on('studios');
             $table->integer('jam_order');
             $table->text('deskripsi');
             $table->double('harga');

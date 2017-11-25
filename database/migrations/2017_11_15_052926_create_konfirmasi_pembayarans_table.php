@@ -14,9 +14,9 @@ class CreateKonfirmasiPembayaransTable extends Migration
     public function up()
     {
         Schema::create('konfirmasi_pembayarans', function (Blueprint $table) {
-            $table->increments('id_konfimasi');
+            $table->increments('id');
             $table->integer('order_id')->unsigned();
-            $table->foreign('order_id')->references('id_order')->on('orders');
+            $table->foreign('order_id')->references('id')->on('orders');
             $table->integer('member_id')->unsigned();
             $table->foreign('member_id')->references('id')->on('users');
             $table->string('atas_nama');

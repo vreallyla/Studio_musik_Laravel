@@ -14,11 +14,12 @@ class CreatePengurusesTable extends Migration
     public function up()
     {
         Schema::create('penguruses', function (Blueprint $table) {
-            $table->increments('id_pengurus');
+            $table->increments('id');
             $table->string('nama_pengurus');
             $table->string('email')->unique();
             $table->string('password');
             $table->string('no_telp');
+            $table->string('alamat');
             $table->string('gambar_pengurus')->nullable();
             $table->enum('status_pengurus',array('pegawai','owner'));
             $table->rememberToken();

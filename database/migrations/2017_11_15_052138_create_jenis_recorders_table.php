@@ -14,7 +14,7 @@ class CreateJenisRecordersTable extends Migration
     public function up()
     {
         Schema::create('jenis_recorders', function (Blueprint $table) {
-            $table->increments('id_jenis_recorder');
+            $table->increments('id');
             $table->string('nama_recorder');
             $table->text('deskripsi');
             $table->integer('harga_recorder');

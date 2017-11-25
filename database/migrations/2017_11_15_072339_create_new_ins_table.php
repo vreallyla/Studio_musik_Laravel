@@ -14,11 +14,11 @@ class CreateNewInsTable extends Migration
     public function up()
     {
         Schema::create('new_ins', function (Blueprint $table) {
-            $table->increments('id_inst');
+            $table->increments('id');
             $table->integer('studio_id')->unsigned();
-            $table->foreign('studio_id')->references('id_studio')->on('studios');
+            $table->foreign('studio_id')->references('id')->on('studios');
             $table->integer('jenis_alat_id')->unsigned();
-            $table->foreign('jenis_alat_id')->references('id_jenis_alat')->on('jen_alats');
+            $table->foreign('jenis_alat_id')->references('id')->on('jen_alats');
             $table->string('nama_inst');
             $table->string('gambar');
             $table->timestamps();

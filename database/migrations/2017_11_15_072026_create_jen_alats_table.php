@@ -14,8 +14,8 @@ class CreateJenAlatsTable extends Migration
     public function up()
     {
         Schema::create('jen_alats', function (Blueprint $table) {
-            $table->increments('id_jenis_alat');
-            $table->enum('Status',array('baru','lama'));
+            $table->increments('id');
+            $table->enum('Status',array('Baru','Lama'));
             $table->timestamps();
         });
     }
